@@ -1,0 +1,150 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    background-color:#161616;
+
+}
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    height: 500px;
+    width: 800px;
+
+    background-color: #000000;
+    border-radius: 50px;
+    box-shadow: 0px 0px 20px 15px rgb(0, 0, 0);
+}
+
+.card > .question p {
+    font-size: 60px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    color: #ffffff
+}
+
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+  
+    .btn-yes:hover {
+    background-color: #37bf2a;
+    border-color: #ffffff;
+}
+
+.btn-yes, .btn-no {
+    height: 65px;
+    width: 140px;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: grab;
+}
+
+.btn-yes {
+    background-color: #ffffff;
+}
+
+.btn-no {
+    background-color: #FF4040;
+    color: #fff;
+}
+
+.answer {
+    display: none;
+}
+
+.answer > p {
+    font-size: 48px;
+    font-family: system-ui, ;
+    font-weight: bold;
+    color: #ff70b5;
+    text-shadow: 2px 2px #000000;
+
+}
+
+.button {
+    display: inline-block;
+    padding: 0px 10px;
+    background-color: none;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.button:hover {
+    background-color: #ff70b5;
+}
+
+
+.glow-on-hover {
+    width: 800px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff5f5;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 0px;
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #000000);
+    position: absolute;
+    top: -6px;
+    left:-6px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(10px);
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    animation: glowing 10s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 0px;
+}
+
+.glow-on-hover:active {
+    color: #ffffff
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    left: 0;
+    top: 0;
+    border-radius: 0px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
